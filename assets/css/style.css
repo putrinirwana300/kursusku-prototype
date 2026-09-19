@@ -107,3 +107,42 @@ body {
 @media (max-width: 700px) {
   .hero-content { grid-template-columns: 1fr; }
 }
+
+/* ===== CSS UNTUK TABEL KATALOG ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+  background: white;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background: #0f766e;
+  color: white;
+  font-weight: 600;
+}
+
+/* ===== CSS UNTUK BADGE STATUS ===== */
+.badge-available, .badge-full {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.badge-available {
+  background: #e7f8ef;
+  color: #146c43;
+}
+
+.badge-full {
+  background: #fdeaea;
+  color: #a61b1b;
+}
