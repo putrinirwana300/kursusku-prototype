@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/helpers.php';
 
+/** @var array $courses */
 $courses = [
     ['code' => 'WEB-01', 'name' => 'Web Dasar', 'fee' => 200000, 'quota' => 30, 'registered' => 12, 'start_date' => '2026-09-21'],
     ['code' => 'PHP-01', 'name' => 'PHP Dasar', 'fee' => 250000, 'quota' => 30, 'registered' => 18, 'start_date' => '2026-09-22'],
@@ -51,20 +52,12 @@ $tahun = date("Y");
   </header>
 
   <nav class="navbar">
-
-    <div class="container">
-
-      <a href="#beranda">Beranda</a>
-
-      <a href="#kursus">Kursus</a>
-
-      <a href="#tentang">Tentang</a>
-
-      <a href="#kontak">Kontak</a>
-
-    </div>
-
-  </nav>
+  <div class="container">
+    <a href="index.php">Beranda</a>
+    <a href="index.php#kursus">Katalog</a>
+    <a href="registration.php">Daftar Kursus</a>
+  </div>
+</nav>
 
   <main>
     <section id="beranda" class="hero">
@@ -92,10 +85,10 @@ $tahun = date("Y");
               Lihat Kursus
             </a>
 
-            <a
-              href="fee-calculator.php"
-              class="button">Lihat Estimasi Biaya
-            </a>
+              <a
+                href="fee-calculator.php"
+                class="button">Lihat Estimasi Biaya
+              </a>
 
           </div>
 

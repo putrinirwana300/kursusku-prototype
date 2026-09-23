@@ -1,0 +1,46 @@
+PERBANDINGAN LOCAL vs HOSTING - KursusKu
+Pertemuan 5 - Pemrograman Web III
+================================================
+
+| Aspek | Local Development | Hosting / Production |
+|-------|-------------------|----------------------|
+| URL | kursusku-prototype.test / localhost:8080 | Domain/subdomain publik (contoh: kursusku.com) |
+| Lokasi file | Laptop mahasiswa (C:\xampp\htdocs) | Server hosting (provider) |
+| Database | MySQL lokal (XAMPP) | Database server hosting |
+| Environment | Development | Production |
+| HTTPS/SSL | Tidak selalu tersedia | Seharusnya HTTPS aktif |
+| Debug | Boleh aktif untuk belajar | Jangan tampilkan error sensitif |
+| Secret | Disimpan lokal, tidak dibagikan | Konfigurasi server aman (.env) |
+| Document root | Folder proyek di htdocs | Folder web provider (public_html / public) |
+| Akses | Hanya lokal (1 komputer) | Diakses publik via internet |
+| Kecepatan | Cepat (lokal) | Tergantung koneksi & server |
+| Biaya | Gratis | Berbayar (kecuali free hosting) |
+| Backup | Manual oleh mahasiswa | Otomatis / terjadwal |
+
+================================================
+CATATAN PENTING:
+
+1. Pada Pertemuan 5, fokus pada PEMAHAMAN KONSEP,
+   bukan upload ke hosting nyata.
+
+2. Upload ke hosting hanya dilakukan jika kelas
+   memiliki akun/server yang disediakan.
+
+3. Jangan pernah mengunggah data pribadi atau
+   credential ke layanan publik.
+
+4. Untuk latihan, gunakan email @example.test
+   dan data fiktif.
+
+5. HTTPS melindungi data saat transit. POST tidak
+   otomatis terenkripsi tanpa HTTPS.
+
+================================================
+KESIMPULAN:
+
+Local development digunakan untuk membangun dan
+menguji aplikasi di komputer sendiri. Hosting
+digunakan untuk mempublikasikan aplikasi agar
+dapat diakses publik. Perpindahan dari local ke
+hosting memerlukan penyesuaian konfigurasi
+(URL, database, environment, HTTPS, document root).

@@ -4,6 +4,7 @@ $fee = 2500000;
 $participantCount = 3;
 $discountPercent = 10;
 $adminFee = 50000;
+$isActive = true;
 
 $subtotal = $fee * $participantCount;
 $discount = intdiv($subtotal * $discountPercent, 100);

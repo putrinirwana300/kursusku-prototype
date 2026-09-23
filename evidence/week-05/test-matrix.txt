@@ -1,0 +1,29 @@
+TEST MATRIX - PERTEMUAN 5
+KursusKu - Form Pendaftaran
+
+| No | Test | Langkah | Hasil yang Diharapkan | Status | Catatan |
+|----|------|---------|------------------------|--------|---------|
+| 1 | Load form | Buka registration.php | Form tampil tanpa error | Lulus | Form muncul lengkap |
+| 2 | Required | Kirim form kosong | Browser menahan field wajib | Lulus | Muncul pesan "Please fill out this field" |
+| 3 | Email | Isi email abc | Browser minta format email | Lulus | Muncul pesan format email salah |
+| 4 | Nama pendek | Isi 2 karakter | minlength mencegah submit | Lulus | Muncul pesan minimal 3 karakter |
+| 5 | GET | Ubah method ke GET | Parameter terlihat di URL | Lulus | Screenshot 04-get-url.png |
+| 6 | POST | Kembalikan ke POST | Query data tidak tampil pada URL | Lulus | URL bersih setelah submit |
+| 7 | Radio | Pilih Mahasiswa/Umum | Nilai muncul di ringkasan | Lulus | Muncul "mahasiswa" / "umum" |
+| 8 | Checkbox | Pilih dua minat | Dua nilai muncul setelah digabung | Lulus | Muncul "ui-ux, database" |
+| 9 | Textarea | Isi catatan singkat | Isi ditampilkan kembali dengan aman | Lulus | Catatan muncul ter-escape |
+| 10 | Hidden | Submit form | Sumber week-05 diterima | Lulus | Muncul "week-05" di ringkasan |
+| 11 | Mobile | Uji sekitar 360 px | Form satu kolom, tidak overflow | Lulus | Screenshot 02-form-mobile.png |
+| 12 | Navigasi | Beranda → Katalog → Daftar | Semua link menuju tujuan benar | Lulus | Screenshot 05-navigation.png |
+
+CATATAN UMUM:
+- Semua test dijalankan di XAMPP (localhost:8080)
+- Data yang dipakai adalah data latihan (bukan data pribadi nyata)
+- Test dilakukan pada browser Chrome/Edge
+- Tanggal test: [23 September 2026]
+
+HASIL AKHIR:
+- Total test: 12
+- Lulus: [12]
+- Perlu Perbaikan: [0]
+- Kesimpulan: Form pendaftaran KursusKu berfungsi sesuai harapan.
