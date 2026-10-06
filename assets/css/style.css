@@ -285,3 +285,131 @@ input:focus, select:focus, textarea:focus {
   .summary-list { grid-template-columns: 1fr; }
 }
 
+/* ===== CSS RINCIAN BIAYA ===== */
+.cost-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.cost-table td {
+  padding: .75rem 1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.cost-table td:last-child {
+  text-align: right;
+}
+
+.cost-table .total-row {
+  background: var(--soft);
+  border-top: 2px solid var(--brand);
+}
+
+.cost-table .total-row td {
+  font-weight: 700;
+  color: var(--brand-dark);
+  font-size: 1.1rem;
+}
+
+.facility-list {
+  padding-left: 1.5rem;
+  margin: 1rem 0;
+}
+
+.facility-list li {
+  margin-bottom: .5rem;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: 2rem auto;
+  flex-wrap: wrap;
+}
+
+/* ===== PERBAIKAN TABEL HISTORY ===== */
+.cost-table .col-no {
+  width: 50px;
+  text-align: center;
+}
+
+.cost-table .col-total {
+  width: 140px;
+  text-align: right;
+  white-space: nowrap;  /* biar "Rp 280.000" tidak pecah */
+}
+
+.cost-table td:last-child {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.cost-table td:first-child {
+  text-align: center;
+}
+
+.cost-table th {
+  background: #f0f9f7;    /* Hijau sangat muda */
+  color: #0b5f55;          /* Teks hijau tua */
+  font-weight: 700;
+  text-align: left;
+  width: 40%;
+  padding: .65rem 1rem;
+}
+
+/* ===== CARA MENDAFTAR — STEP CARDS ===== */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.step-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  text-align: center;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.step-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px -5px rgba(0,0,0,.08);
+}
+
+.step-number {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 1rem;
+  background: #0f766e;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.25rem;
+}
+
+.step-card h3 {
+  margin: 0 0 .5rem;
+  color: #0f766e;
+  font-size: 1.1rem;
+}
+
+.step-card p {
+  margin: 0;
+  color: #6b7280;
+  font-size: .9rem;
+}
+
+/* Mobile: 1 kolom */
+@media (max-width: 640px) {
+  .steps-grid {
+    grid-template-columns: 1fr;
+  }
+}

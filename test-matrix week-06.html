@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Test Matrix Pertemuan 6 - KursusKu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      background: #f5f7fa;
+      color: #1f2937;
+      padding: 2rem;
+      min-height: 100vh;
+      line-height: 1.5;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .header {
+      margin-bottom: 2rem;
+    }
+    .badge-label {
+      display: inline-block;
+      padding: .3rem .8rem;
+      background: #e6f4f1;
+      color: #0b5f55;
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      border-radius: 999px;
+      margin-bottom: 1rem;
+    }
+    h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #111827;
+      margin-bottom: .5rem;
+      letter-spacing: -.02em;
+    }
+    .subtitle {
+      color: #6b7280;
+      font-size: .95rem;
+    }
+    .matrix-card {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 1.5rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, .04);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    thead th {
+      padding: .85rem 1rem;
+      text-align: left;
+      font-size: .7rem;
+      font-weight: 700;
+      color: #0b5f55;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      background: #f0f9f7;
+      border-bottom: 1px solid #d1e7e0;
+    }
+    thead th:first-child { border-radius: 8px 0 0 0; }
+    thead th:last-child { border-radius: 0 8px 0 0; }
+    tbody tr {
+      transition: background .15s;
+    }
+    tbody tr:hover {
+      background: #fafbfc;
+    }
+    tbody td {
+      padding: .9rem 1rem;
+      font-size: .875rem;
+      color: #374151;
+      border-bottom: 1px solid #f3f4f6;
+    }
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+      padding: .3rem .7rem;
+      background: #ecfdf5;
+      color: #047857;
+      font-size: .7rem;
+      font-weight: 800;
+      border-radius: 999px;
+      letter-spacing: .05em;
+    }
+    .status::before {
+      content: "✓";
+      font-size: .8rem;
+    }
+    .status.fail {
+      background: #fef2f2;
+      color: #b91c1c;
+    }
+    .status.fail::before {
+      content: "✕";
+    }
+    @media (max-width: 640px) {
+      body { padding: 1rem; }
+      h1 { font-size: 1.5rem; }
+      .matrix-card { padding: 1rem; }
+      th, td { padding: .6rem .5rem; font-size: .8rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <span class="badge-label">Evidence Week 06</span>
+      <h1>Test Matrix Pertemuan 6</h1>
+      <p class="subtitle">Hasil pengujian form pendaftaran KursusKu</p>
+    </div>
+
+    <div class="matrix-card">
+      <table>
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Skenario</th>
+            <th>Actual</th>
+            <th>Expected</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Mahasiswa, Web Dasar, 1 paket</td><td>Rp 160.000</td><td>Rp 160.000</td><td><span class="status">PASS</span></td></tr>
+          <tr><td>2</td><td>Guru, PHP Dasar, 1 paket</td><td>Rp 297.500</td><td>Rp 297.500</td><td><span class="status">PASS</span></td></tr>
+          <tr><td>3</td><td>Umum, Laravel Fundamental, 1 paket</td><td>Rp 500.000</td><td>Rp 500.000</td><td><span class="status">PASS</span></td></tr>
+          <tr><td>4</td><td>Mahasiswa, Web Dasar, 2 paket</td><td>Rp 320.000</td><td>Rp 320.000</td><td><span class="status">PASS</span></td></tr>
+          <tr><td>5</td><td>Nama kosong</td><td>Nama wajib diisi.</td><td>Nama wajib diisi.</td><td><span class="status">PASS</span></td></tr>
+          <tr><td>6</td><td>Email tidak valid</td><td>Email tidak valid.</td><td>Email tidak valid.</td><td><span class="status">PASS</span></td></tr>
+          <tr><td>7</td><td>Minat kosong</td><td>Tidak ada memilih minat.</td><td>Tidak ada memilih minat.</td><td><span class="status">PASS</span></td></tr>
+          <tr><td>8</td><td>3 minat dipilih</td><td>Frontend, Backend, Database</td><td>Frontend, Backend, Database</td><td><span class="status">PASS</span></td></tr>
+          <tr><td>9</td><td>Metode offline</td><td>offline</td><td>offline</td><td><span class="status">PASS</span></td></tr>
+          <tr><td>10</td><td>Metode hybrid</td><td>hybrid</td><td>hybrid</td><td><span class="status">PASS</span></td></tr>
+          <tr><td>11</td><td>Paket 3 (Mahasiswa, Web Dasar)</td><td>Rp 480.000</td><td>Rp 480.000</td><td><span class="status">PASS</span></td></tr>
+          <tr><td>12</td><td>Navigasi</td><td>Beranda/Keunggulan/Katalog/Cara Daftar/Media/Kontak/From P5/Daftar P6/History</td><td>Beranda//Keunggulan/Katalog/Cara Daftar/Media/Kontak/From P5/Daftar P6/History</td><td><span class="status">PASS</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
