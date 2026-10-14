@@ -11,6 +11,15 @@ $learningMethod = $_POST['learning_method'] ?? '';
 $packageCount = (int) ($_POST['package_count'] ?? 1);
 $interestText = implode(', ', $interests);
 
+require __DIR__ . '/data.php';
+require __DIR__ . '/helpers.php';
+
+// Cek method — harus POST
+if ($_SERVER['REQUEST_METHOD'] != 'POST') {
+    header('Location: register.php');
+    exit;
+}
+
 // ini data kursus - harga
 $courses = [
     'web-dasar' => ['name' => 'Web Dasar', 'fee' => 200000],
@@ -119,3 +128,4 @@ $dataPeserta = [
 </main>
 </body>
 </html>
+
