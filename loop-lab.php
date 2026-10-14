@@ -1,13 +1,6 @@
 <?php
-function e($value): string {
-    return htmlspecialchars((string) $value, ENT_QUOTES, 'UTF-8');
-}
-
-$courses = [
-    ['name' => 'Web Dasar', 'fee' => 300000],
-    ['name' => 'PHP Dasar', 'fee' => 350000],
-    ['name' => 'Laravel Fundamental', 'fee' => 500000],
-];
+require __DIR__ . '/data.php';
+require __DIR__ . '/helpers.php';
 ?>
 <!doctype html>
 <html lang="id">
@@ -18,61 +11,100 @@ $courses = [
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="index.php">KursusKu</a>
+    <nav>
+      <a href="index.php">Beranda</a>
+      <a href="register.php">Daftar</a>
+      <a href="history.php">History</a>
+    </nav>
+  </div>
+</header>
+
 <main class="container">
   <section class="page-intro">
     <p class="eyebrow">Loop Lab</p>
     <h1>Latihan Perulangan PHP</h1>
-    <p>Contoh loop `for` dan `foreach` untuk menampilkan data berulang.</p>
+    <p>Contoh <code>for</code>, <code>while</code>, <code>do-while</code>, dan <code>foreach</code>.</p>
   </section>
 
-  <!-- Contoh 1: Loop For -->
+  <!-- 1. FOR -->
   <section class="summary-card">
-    <h2>1. Loop For — Daftar Paket</h2>
+    <h2>1. Loop <code>for</code> — Pertemuan 1-5</h2>
     <ul>
       <?php for ($i = 1; $i <= 5; $i++): ?>
-        <li>Paket <?= $i ?>: Rp <?= number_format($i * 100000, 0, ',', '.') ?></li>
+        <li>Pertemuan ke-<?= $i ?></li>
       <?php endfor; ?>
     </ul>
   </section>
 
-  <!-- Contoh 2: Loop Foreach -->
+  <!-- 2. WHILE -->
   <section class="summary-card">
-    <h2>2. Loop Foreach — Daftar Kursus</h2>
-    <ol>
+    <h2>2. Loop <code>while</code> — Nomor Antrean</h2>
+    <ul>
+      <?php
+      $i = 1;
+      while ($i <= 5):
+      ?>
+        <li>Nomor antrean: <?= $i ?></li>
+      <?php
+        $i++;
+      endwhile;
+      ?>
+    </ul>
+  </section>
+
+  <!-- 3. DO-WHILE -->
+  <section class="summary-card">
+    <h2>3. Loop <code>do-while</code> — Percobaan</h2>
+    <ul>
+      <?php
+      $i = 1;
+      do {
+      ?>
+        <li>Percobaan ke-<?= $i ?></li>
+      <?php
+        $i++;
+      } while ($i <= 5);
+      ?>
+    </ul>
+  </section>
+
+  <!-- 4. FOREACH — DARI data.php -->
+  <section class="summary-card">
+    <h2>4. Loop <code>foreach</code> — Daftar Kursus</h2>
+    <p>Data dari <code>data.php</code>:</p>
+    <ul>
       <?php foreach ($courses as $course): ?>
         <li>
           <strong><?= e($course['name']) ?></strong> —
-          Rp <?= number_format($course['fee'], 0, ',', '.') ?>
+          <?= formatRupiah($course['fee']) ?>
+          (<?= e($course['code']) ?>)
         </li>
       <?php endforeach; ?>
-    </ol>
+    </ul>
   </section>
 
-  <!-- Contoh 3: Loop + Kondisi -->
+  <!-- PERBANDINGAN -->
   <section class="summary-card">
-    <h2>3. Loop + Kondisi — Diskon 15%</h2>
+    <h2>Perbandingan Loop</h2>
     <table class="cost-table">
       <thead>
-        <tr><th>Kursus</th><th>Harga</th><th>Diskon</th><th>Total</th></tr>
+        <tr><th>Loop</th><th>Karakter</th><th>Gunakan ketika</th></tr>
       </thead>
       <tbody>
-        <?php foreach ($courses as $course): 
-          $discount = $course['fee'] * 0.15;
-          $total = $course['fee'] - $discount;
-        ?>
-          <tr>
-            <td><?= e($course['name']) ?></td>
-            <td>Rp <?= number_format($course['fee'], 0, ',', '.') ?></td>
-            <td>-Rp <?= number_format($discount, 0, ',', '.') ?></td>
-            <td><strong>Rp <?= number_format($total, 0, ',', '.') ?></strong></td>
-          </tr>
-        <?php endforeach; ?>
+        <tr><td><code>for</code></td><td>Counter jelas</td><td>Jumlah iterasi diketahui</td></tr>
+        <tr><td><code>while</code></td><td>Kondisi dulu</td><td>Iterasi bergantung kondisi</td></tr>
+        <tr><td><code>do-while</code></td><td>Blok dulu</td><td>Minimal jalan sekali</td></tr>
+        <tr><td><code>foreach</code></td><td>Setiap item array</td><td>Memproses daftar data</td></tr>
       </tbody>
     </table>
   </section>
 
   <div class="action-buttons">
-    <a class="btn-link" href="registration.php">Kembali ke Form</a>
+    <a class="btn-link" href="register.php">Kembali ke Form</a>
+    <a class="btn-link" href="index.php">Beranda</a>
   </div>
 </main>
 </body>

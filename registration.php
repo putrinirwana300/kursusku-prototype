@@ -12,6 +12,9 @@
     <a class="brand" href="index.php">KursusKu</a>
     <nav aria-label="Navigasi utama">
       <a href="index.php">Beranda</a>
+      <a href="index.php#kursus">Katalog</a>
+      <a href="registrasi.php">Daftar</a>
+      <a href="history.php">History</a>
     </nav>
   </div>
 </header>
